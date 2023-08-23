@@ -19,6 +19,7 @@ html {
 body {
   background: #121212;
   color: #eee;
+  text-shadow: -1px -1px 0 var(--rose);
 }
 
 .nav-bar {

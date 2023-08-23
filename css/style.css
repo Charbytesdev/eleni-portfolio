@@ -1,3 +1,7 @@
+:root {
+  --rose: #92133e;
+}
+
 *,
 ::before,
 ::after {
@@ -25,7 +29,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-top: solid 0.1px rgba(206, 0, 224, 0.979);
+  border-top: solid 0.1px var(--rose);
 
   justify-content: space-between;
   align-items: center;
@@ -79,4 +83,62 @@ body {
   outline: 1px solid #ffffff;
   outline-offset: -10px;
   background: conic-gradient(from 90deg at 1px 1px, #00000000 25%, #ffffff 0);
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hire-me-button {
+  align-self: center;
+  position: relative;
+  margin-bottom: 21px;
+  height: 65px;
+  width: 210px;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: 0.6s;
+
+  color: rgb(216, 128, 116);
+  border-color: var(--rose);
+}
+.hire-me-button:before,
+.hire-me-button:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.hire-me-button:before {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.hire-me-button:after {
+  width: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.hire-me-button:hover:before,
+.hire-me-button:hover:after {
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.hire-me-button:hover {
+  color: #f2f2f2;
+  background: var(--rose);
 }

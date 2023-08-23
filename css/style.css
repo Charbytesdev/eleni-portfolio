@@ -70,7 +70,7 @@ body {
 }
 
 .hero-image {
-  height: 200px;
+  height: 300px;
   width: auto;
   border: solid;
   --s: 10px; /* control the size */

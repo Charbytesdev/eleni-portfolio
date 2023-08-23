@@ -54,3 +54,32 @@ body {
 .nav-full-name {
   display: inline;
 }
+
+.hero-container {
+  margin: 100px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero-container,
+.hero {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-image {
+  height: 200px;
+  width: auto;
+  border: solid;
+  grid-column: 2/-1;
+  grid-row: 1/ -1;
+}
+
+.hero-description {
+  grid-row: 2/-1;
+}

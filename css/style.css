@@ -37,27 +37,30 @@ body {
   position: fixed;
   top: 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template: 1fr/ 1fr 1fr 1fr;
   width: 100%;
   border-top: solid 0.1px var(--rose);
 
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 0;
+  padding: 1.25rem 1.875rem;
 }
 
 .nav-bar-credentials {
   display: flex;
   gap: var(--_gap);
   align-items: center;
-  margin-left: 1.875rem;
+}
+
+.logo,
+.nav-full-name {
+  padding: calc(var(--_gap) / 4) calc(var(--_gap) / 2);
 }
 
 .nav-links {
   display: flex;
-  margin-right: 1.875rem;
+  justify-content: center;
   text-transform: uppercase;
 }
 

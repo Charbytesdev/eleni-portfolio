@@ -23,6 +23,8 @@ body {
 }
 
 .nav-bar {
+  --_gap: 1.5rem;
+
   position: fixed;
   top: 0;
 
@@ -40,20 +42,57 @@ body {
 
 .nav-bar-credentials {
   display: flex;
-  gap: 1.25rem;
+  gap: var(--_gap);
   align-items: center;
   margin-left: 1.875rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 3.125rem;
   margin-right: 1.875rem;
+  text-transform: uppercase;
 }
 
 .link {
   text-decoration: none;
-  color: #809fff;
+  color: inherit;
+  overflow: hidden;
+  position: relative;
+  padding: calc(var(--_gap) / 4) calc(var(--_gap) / 2);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: orangered;
+
+  translate: var(--_translate, 0);
+  scale: var(--_scale, 0) 1;
+  transition: scale 150ms var(--_scale-delay, 0ms),
+    translate 250ms var(--_translate-delay, 0ms);
+}
+
+.nav-links .link:hover ~ .link {
+  --_translate: -100%;
+  --_scale-delay: 400ms;
+  --_translate-delay: 50ms;
+}
+
+.nav-links:hover .link {
+  --_translate: 100%;
+  --_scale-delay: 400ms;
+  --_translate-delay: 50ms;
+}
+
+.nav-links .link:hover,
+.nav-links .link:focus-within {
+  --_scale: 1;
+  --_translate: 0;
+  --_scale-delay: 0ms;
 }
 
 .nav-full-name {
@@ -78,7 +117,7 @@ body {
   height: 300px;
   width: auto;
   border: solid;
-  padding: calc(1rem / 16);
+  padding: calc(--_gap / 16);
   border: 20px solid #ff080800;
   outline: 1px solid #ffffff;
   outline-offset: -10px;

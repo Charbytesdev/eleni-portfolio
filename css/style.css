@@ -19,8 +19,10 @@
 }
 
 body,
-html {
-  height: 200%;
+html,
+.hero-container,
+.hero {
+  height: 100vh;
 }
 
 body {
@@ -106,23 +108,16 @@ body {
   display: inline;
 }
 
-.hero-container {
-  margin: 6.25rem 0 0 0;
-}
-
-.hero-container,
-.hero {
-  width: 100%;
-}
-
 .hero {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
   height: 300px;
-  width: auto;
+  width: 300px;
   border: solid;
   padding: calc(--_gap / 16);
   border: 20px solid #ff080800;
@@ -131,10 +126,15 @@ body {
   background: conic-gradient(from 90deg at 1px 1px, #00000000 25%, #ffffff 0);
 }
 
-.hero-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.hero-fullname {
+  font-family: "Monoton", sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  font-size: 2.5rem;
 }
 
 .hire-me-button {
@@ -187,11 +187,4 @@ body {
 .hire-me-button:hover {
   color: #f2f2f2;
   background: var(--rose);
-}
-
-.hero-fullname {
-  font-family: "Monoton";
-  font-size: 6rem;
-  font-weight: 100;
-  text-transform: uppercase;
 }

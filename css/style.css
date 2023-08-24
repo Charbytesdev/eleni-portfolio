@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Monoton";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../resources/fonts/monoton-v15-latin-regular.woff2") format("woff2");
+}
+
 :root {
   --rose: #92133e;
 }
@@ -180,4 +187,11 @@ body {
 .hire-me-button:hover {
   color: #f2f2f2;
   background: var(--rose);
+}
+
+.hero-fullname {
+  font-family: "Monoton";
+  font-size: 6rem;
+  font-weight: 100;
+  text-transform: uppercase;
 }

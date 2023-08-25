@@ -23,12 +23,21 @@ html,
 .hero-container,
 .hero {
   height: 100vh;
+  overflow: hidden;
 }
 
 body {
   background: #121212;
   color: #eee;
   text-shadow: -1px -1px 0 var(--rose);
+}
+
+.blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(12vmax);
 }
 
 #mouse-tracker {
@@ -42,6 +51,7 @@ body {
   border-radius: 50%;
   background: linear-gradient(to right, aquamarine, purple);
   animation: rotate 20s infinite;
+  z-index: 1;
 }
 
 @keyframes rotate {
@@ -52,6 +62,11 @@ body {
   to {
     rotate: 360deg;
   }
+}
+
+.section-1 {
+  z-index: 10;
+  position: relative;
 }
 
 .nav-bar {

@@ -1,6 +1,12 @@
 const mouseTracker = document.getElementById("mouse-tracker");
 document.body.addEventListener("pointermove", (e) => {
   const { clientX, clientY } = e;
-  mouseTracker.style.left = `${clientX}px`;
-  mouseTracker.style.top = `${clientY}px`;
+
+  mouseTracker.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    { duration: 3000, fill: "forwards" }
+  );
 });

@@ -31,7 +31,7 @@ body {
   text-shadow: -1px -1px 0 var(--rose);
 }
 
-#blob {
+#mouse-tracker {
   background-color: white;
   height: 500px;
   aspect-ratio: 1;

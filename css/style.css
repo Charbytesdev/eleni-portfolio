@@ -42,7 +42,6 @@ body {
   width: 100%;
   border-top: solid 0.1px var(--rose);
 
-  justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.875rem;
 }
@@ -139,7 +138,9 @@ body {
 }
 
 .hire-me-button {
-  align-self: center;
+  margin-left: auto;
+  justify-content: end;
+  place-items: end;
   position: relative;
   margin-bottom: 1.3125rem;
   height: 4.0625rem;

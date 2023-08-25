@@ -70,6 +70,10 @@ body {
   padding: calc(var(--_gap) / 4) calc(var(--_gap) / 2);
 }
 
+.home-btn {
+  --_scale: 1;
+}
+
 .link::after {
   content: "";
   position: absolute;
@@ -138,13 +142,13 @@ body {
 }
 
 .hire-me-button {
+  scale: 0.8;
   margin-left: auto;
-  justify-content: end;
-  place-items: end;
   position: relative;
-  margin-bottom: 1.3125rem;
-  height: 4.0625rem;
-  width: 13.125rem;
+  /* height: 4.0625rem; */
+  /* width: 13.125rem; */
+  height: 3.75rem;
+  width: 12.2rem;
   font-size: 1.4375rem;
   font-weight: 500;
   letter-spacing: 0.0625rem;

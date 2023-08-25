@@ -31,6 +31,13 @@ body {
   text-shadow: -1px -1px 0 var(--rose);
 }
 
+#blob {
+  background-color: white;
+  height: 500px;
+  aspect-ratio: 1;
+  position: absolute;
+}
+
 .nav-bar {
   --_gap: 3rem;
 

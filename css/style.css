@@ -64,6 +64,7 @@ body {
   }
 }
 .page-container {
+  scroll-behavior: smooth;
   height: 100%;
   width: 100%;
   scroll-snap-type: x mandatory;
@@ -73,6 +74,11 @@ body {
 
 .page-container::-webkit-scrollbar {
   display: none;
+}
+
+.page-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
 .pages {
@@ -125,7 +131,7 @@ body {
   padding: calc(var(--_gap) / 4) calc(var(--_gap) / 2);
 }
 
-.home-btn {
+.active-page {
   --_scale: 1;
 }
 

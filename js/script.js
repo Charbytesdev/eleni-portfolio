@@ -1,5 +1,11 @@
 const mouseTracker = document.getElementById("mouse-tracker");
-document.body.addEventListener("pointermove", (e) => {
+const pageContainer = document.getElementById("page-container");
+const home = document.getElementById("home");
+const publications = document.getElementById("publications");
+const resume = document.getElementById("resume");
+const about = document.getElementById("about");
+
+function animateMouseTracker(e) {
   const { clientX, clientY } = e;
   mouseTracker.animate(
     {
@@ -8,39 +14,33 @@ document.body.addEventListener("pointermove", (e) => {
     },
     { duration: 3000, fill: "forwards" }
   );
-});
+}
 
-const publications = document.getElementById("publications");
+document.body.addEventListener("pointermove", (e) => animateMouseTracker(e));
 
-const pageContainer = document.getElementById("page-container");
+function activateNavigationUnderline(page) {
+  page.classList.add("active-page");
+}
 
-const home = document.getElementById("home");
-const resume = document.getElementById("resume");
-const about = document.getElementById("about");
+function deactivateAllNavigationUnderline() {
+  home.classList.remove("active-page");
+  publications.classList.remove("active-page");
+  resume.classList.remove("active-page");
+  about.classList.remove("active-page");
+}
 
-document.addEventListener("wheel", (e) => {
-  console.log(pageContainer.scrollLeft);
-  pageContainer.scrollLeft > pageContainer.clientWidth;
+document.addEventListener("wheel", activateCurrentNavigationUnderline);
+
+function activateCurrentNavigationUnderline() {
+  deactivateAllNavigationUnderline();
 
   if (pageContainer.scrollLeft > pageContainer.clientWidth * 2.5) {
-    home.classList.remove("active-page");
-    publications.classList.remove("active-page");
-    resume.classList.remove("active-page");
-    about.classList.add("active-page");
+    activateNavigationUnderline(about);
   } else if (pageContainer.scrollLeft > pageContainer.clientWidth * 1.5) {
-    home.classList.remove("active-page");
-    publications.classList.remove("active-page");
-    resume.classList.add("active-page");
-    about.classList.remove("active-page");
+    activateNavigationUnderline(resume);
   } else if (pageContainer.scrollLeft > pageContainer.clientWidth / 2) {
-    home.classList.remove("active-page");
-    publications.classList.add("active-page");
-    resume.classList.remove("active-page");
-    about.classList.remove("active-page");
+    activateNavigationUnderline(publications);
   } else {
-    home.classList.add("active-page");
-    publications.classList.remove("active-page");
-    resume.classList.remove("active-page");
-    about.classList.remove("active-page");
+    activateNavigationUnderline(home);
   }
-});
+}

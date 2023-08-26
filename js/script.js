@@ -6,8 +6,24 @@ const resume = document.getElementById("resume");
 const about = document.getElementById("about");
 
 document.body.addEventListener("pointermove", (e) => animateMouseTracker(e));
-
 document.addEventListener("wheel", activateCurrentNavigationUnderline);
+home.addEventListener("click", () => {
+  deactivateAllNavigationUnderline();
+  activateNavigationUnderline(home);
+});
+publications.addEventListener("click", () => {
+  deactivateAllNavigationUnderline();
+  activateNavigationUnderline(publications);
+});
+resume.addEventListener("click", () => {
+  deactivateAllNavigationUnderline();
+  activateNavigationUnderline(resume);
+});
+
+about.addEventListener("click", () => {
+  deactivateAllNavigationUnderline();
+  activateNavigationUnderline(about);
+});
 
 function animateMouseTracker(e) {
   const { clientX, clientY } = e;

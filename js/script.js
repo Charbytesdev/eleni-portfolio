@@ -5,6 +5,10 @@ const publications = document.getElementById("publications");
 const resume = document.getElementById("resume");
 const about = document.getElementById("about");
 
+document.body.addEventListener("pointermove", (e) => animateMouseTracker(e));
+
+document.addEventListener("wheel", activateCurrentNavigationUnderline);
+
 function animateMouseTracker(e) {
   const { clientX, clientY } = e;
   mouseTracker.animate(
@@ -15,21 +19,6 @@ function animateMouseTracker(e) {
     { duration: 3000, fill: "forwards" }
   );
 }
-
-document.body.addEventListener("pointermove", (e) => animateMouseTracker(e));
-
-function activateNavigationUnderline(page) {
-  page.classList.add("active-page");
-}
-
-function deactivateAllNavigationUnderline() {
-  home.classList.remove("active-page");
-  publications.classList.remove("active-page");
-  resume.classList.remove("active-page");
-  about.classList.remove("active-page");
-}
-
-document.addEventListener("wheel", activateCurrentNavigationUnderline);
 
 function activateCurrentNavigationUnderline() {
   deactivateAllNavigationUnderline();
@@ -43,4 +32,15 @@ function activateCurrentNavigationUnderline() {
   } else {
     activateNavigationUnderline(home);
   }
+}
+
+function deactivateAllNavigationUnderline() {
+  home.classList.remove("active-page");
+  publications.classList.remove("active-page");
+  resume.classList.remove("active-page");
+  about.classList.remove("active-page");
+}
+
+function activateNavigationUnderline(page) {
+  page.classList.add("active-page");
 }
